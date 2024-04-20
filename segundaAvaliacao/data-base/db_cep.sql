@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Abr-2024 às 23:11
+-- Tempo de geração: 20-Abr-2024 às 23:32
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -49,6 +49,26 @@ INSERT INTO `registro_de_cep` (`id_cep`, `id_usuario`, `cep`, `logradouro`, `bai
 (7, 5, '78730-27', 'Rua Petrônio Portela', 'Vila São Sebastião II', 'Rondonópolis', 'MT', '5107602', '66', '9151'),
 (8, 5, '79843-34', 'Travessa 07', 'Estrela Vera', 'Dourados', 'MS', '5003702', '67', '9073');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `senha` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nome`, `email`, `senha`) VALUES
+(5, 'Otavio', 'otavio@email.com', '827ccb0eea8a706c4c34a16891f84e7b');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -61,6 +81,12 @@ ALTER TABLE `registro_de_cep`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -69,6 +95,12 @@ ALTER TABLE `registro_de_cep`
 --
 ALTER TABLE `registro_de_cep`
   MODIFY `id_cep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para despejos de tabelas
